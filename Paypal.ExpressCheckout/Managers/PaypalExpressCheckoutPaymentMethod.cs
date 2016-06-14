@@ -6,14 +6,13 @@ using System.Collections.Specialized;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Web;
 using VirtoCommerce.Domain.Order.Model;
 using VirtoCommerce.Domain.Payment.Model;
 using VirtoCommerce.Domain.Store.Model;
 
 namespace Paypal.ExpressCheckout.Managers
 {
-	public class PaypalExpressCheckoutPaymentMethod : VirtoCommerce.Domain.Payment.Model.PaymentMethod
+    public class PaypalExpressCheckoutPaymentMethod : VirtoCommerce.Domain.Payment.Model.PaymentMethod
 	{
 		private const string _paypalAPIModeStoreSetting = "Paypal.ExpressCheckout.Mode";
 		private const string _paypalPaymentModeStoreSetting = "Paypal.ExpressCheckout.PaymentMode";
