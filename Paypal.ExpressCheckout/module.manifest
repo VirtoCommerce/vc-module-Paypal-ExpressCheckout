@@ -8,7 +8,7 @@
     </dependencies>
 
     <title>Paypal Express Checkout</title>
-    <description>Paypal express checkout payment integration</description>
+    <description>Paypal Express Checkout payment integration</description>
     <authors>
         <author>Virto Commerce</author>
     </authors>
@@ -46,7 +46,7 @@
                 </allowedValues>
                 <defaultValue>PaypalAccount</defaultValue>
                 <title>Paypal payment mode</title>
-                <description>Type of payment default method (bank card or paypal account)</description>
+                <description>Type of payment default method (bank card or Paypal account)</description>
             </setting>
             <setting>
                 <name>Paypal.ExpressCheckout.APIUsername</name>
@@ -64,14 +64,14 @@
                 <name>Paypal.ExpressCheckout.APISignature</name>
                 <valueType>string</valueType>
                 <title>API signature</title>
-                <description>mMerchant api signature credential</description>
+                <description>Merchant api signature credential</description>
             </setting>
             <setting>
                 <name>Paypal.ExpressCheckout.PaymentRedirectRelativePath</name>
                 <valueType>string</valueType>
-                <defaultValue>checkout/externalpaymentcallback</defaultValue>
+                <defaultValue>cart/externalpaymentcallback</defaultValue>
                 <title>Redirect relative path</title>
-                <description>Relative path for paypal payment from paypal site to frontend</description>
+                <description>Relative URL (redirect path) from Paypal site to Storefront</description>
             </setting>
             <setting>
                 <name>Paypal.ExpressCheckout.PaymentActionType</name>

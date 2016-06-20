@@ -1,6 +1,7 @@
-﻿using System;
-using Microsoft.Practices.Unity;
+﻿using Microsoft.Practices.Unity;
 using Paypal.ExpressCheckout.Managers;
+using System;
+using System.Net;
 using VirtoCommerce.Domain.Payment.Services;
 using VirtoCommerce.Platform.Core.Modularity;
 using VirtoCommerce.Platform.Core.Settings;
@@ -31,6 +32,8 @@ namespace Paypal.ExpressCheckout
             };
 
             _container.Resolve<IPaymentMethodsService>().RegisterPaymentMethod(paypalBankCardsExpressCheckoutPaymentMethodFactory);
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
         }
 
         #endregion
