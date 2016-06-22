@@ -34,7 +34,7 @@
                     <value>Live</value>
                 </allowedValues>
                 <defaultValue>Sandbox</defaultValue>
-                <title>Paypal api mode</title>
+                <title>Paypal API mode</title>
                 <description>Type of api (sandbox or live)</description>
             </setting>
             <setting>
