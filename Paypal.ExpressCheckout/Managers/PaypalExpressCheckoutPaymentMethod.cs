@@ -40,8 +40,7 @@ namespace Paypal.ExpressCheckout.Managers
         {
             get
             {
-                var retVal = GetSetting(_paypalAPIModeStoreSetting);
-                return retVal;
+                return GetSetting(_paypalAPIModeStoreSetting);
             }
         }
 
@@ -49,8 +48,7 @@ namespace Paypal.ExpressCheckout.Managers
         {
             get
             {
-                var retVal = GetSetting(_paypalPaymentModeStoreSetting);
-                return retVal;
+                return GetSetting(_paypalPaymentModeStoreSetting);
             }
         }
 
@@ -58,8 +56,7 @@ namespace Paypal.ExpressCheckout.Managers
         {
             get
             {
-                var retVal = GetSetting(_paypalAPIUserNameStoreSetting);
-                return retVal;
+                return GetSetting(_paypalAPIUserNameStoreSetting);
             }
         }
 
@@ -67,8 +64,7 @@ namespace Paypal.ExpressCheckout.Managers
         {
             get
             {
-                var retVal = GetSetting(_paypalAPIPasswordStoreSetting);
-                return retVal;
+                return GetSetting(_paypalAPIPasswordStoreSetting);
             }
         }
 
@@ -76,8 +72,7 @@ namespace Paypal.ExpressCheckout.Managers
         {
             get
             {
-                var retVal = GetSetting(_paypalAPISignatureStoreSetting);
-                return retVal;
+                return GetSetting(_paypalAPISignatureStoreSetting);
             }
         }
 
@@ -85,8 +80,7 @@ namespace Paypal.ExpressCheckout.Managers
         {
             get
             {
-                var retVal = GetSetting(_paypalPaymentRedirectRelativePathStoreSetting);
-                return retVal;
+                return GetSetting(_paypalPaymentRedirectRelativePathStoreSetting);
             }
         }
 
@@ -94,8 +88,7 @@ namespace Paypal.ExpressCheckout.Managers
         {
             get
             {
-                var settingValue = GetSetting(_paypalPaymentActionTypeStoreSetting);
-                return GetPaymentActionType(settingValue);
+                return GetPaymentActionType(GetSetting(_paypalPaymentActionTypeStoreSetting));
             }
         }
 
@@ -122,10 +115,8 @@ namespace Paypal.ExpressCheckout.Managers
 
             var retVal = new ProcessPaymentResult();
 
-            var config = GetConfigMap();
-            var url = context.Store.Url;
+            var service = new PayPalAPIInterfaceServiceService(GetConfigMap());
             var request = GetSetExpressCheckoutRequest(context.Order, context.Store, context.Payment);
-            var service = new PayPalAPIInterfaceServiceService(config);
 
             try
             {
@@ -162,9 +153,7 @@ namespace Paypal.ExpressCheckout.Managers
 
             retVal.OrderId = context.Order.Id;
 
-            var config = GetConfigMap();
-
-            var service = new PayPalAPIInterfaceServiceService(config);
+            var service = new PayPalAPIInterfaceServiceService(GetConfigMap());
 
             var getExpressCheckoutDetailsRequest = GetGetExpressCheckoutDetailsRequest(context.OuterId);
             try
@@ -227,8 +216,7 @@ namespace Paypal.ExpressCheckout.Managers
             {
                 try
                 {
-                    var config = GetConfigMap();
-                    var service = new PayPalAPIInterfaceServiceService(config);
+                    var service = new PayPalAPIInterfaceServiceService(GetConfigMap());
                     var doVoidResponse = service.DoVoid(new DoVoidReq { DoVoidRequest = new DoVoidRequestType { AuthorizationID = context.Payment.OuterId, Note = "Cancel payment" } });
 
                     CheckResponse(doVoidResponse);
@@ -261,8 +249,7 @@ namespace Paypal.ExpressCheckout.Managers
             {
                 try
                 {
-                    var config = GetConfigMap();
-                    var service = new PayPalAPIInterfaceServiceService(config);
+                    var service = new PayPalAPIInterfaceServiceService(GetConfigMap());
                     DoCaptureReq doCaptureRequest = GetDoCaptureRequest(context.Payment);
 
                     var doCaptureResponse = service.DoCapture(doCaptureRequest);
@@ -297,8 +284,7 @@ namespace Paypal.ExpressCheckout.Managers
             {
                 try
                 {
-                    var config = GetConfigMap();
-                    var service = new PayPalAPIInterfaceServiceService(config);
+                    var service = new PayPalAPIInterfaceServiceService(GetConfigMap());
                     RefundTransactionReq refundTransctionRequest = GetRefundTransactionRequest(context.Payment);
                     service.RefundTransaction(refundTransctionRequest);
                 }

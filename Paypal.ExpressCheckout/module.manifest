@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <module>
     <id>Paypal.ExpressCheckout</id>
-    <version>2.11.0</version>
-    <platformVersion>2.11.0</platformVersion>
+    <version>2.12.0</version>
+    <platformVersion>2.12.0</platformVersion>
     <dependencies>
-        <dependency id="VirtoCommerce.Core" version="2.11.0" />
+        <dependency id="VirtoCommerce.Core" version="2.17.0" /> 
     </dependencies>
 
     <title>Paypal Express Checkout</title>
     <description>Paypal Express Checkout payment integration</description>
     <authors>
         <author>Virto Commerce</author>
+        <author>Egidijus Mažeika</author>
     </authors>
     <owners>
         <owner>Virto Commerce</owner>
     </owners>
-    <projectUrl>http://virtocommerce.com/</projectUrl>
-    <iconUrl>Modules/$(Paypal.ExpressCheckout)/Content/paypal_2014_logo.png</iconUrl>
+    <projectUrl>https://github.com/VirtoCommerce/vc-module-Paypal-ExpressCheckout</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/VirtoCommerce/vc-module-Paypal-ExpressCheckout/master/Paypal.ExpressCheckout/Content/paypal_2014_logo.png</iconUrl>
     <releaseNotes>First version.</releaseNotes>
     <copyright>Copyright © 2011-2016 Virto Commerce. All rights reserved</copyright>
     <tags>paypal bank cards payment gateway</tags>
@@ -71,7 +72,7 @@
                 <valueType>string</valueType>
                 <defaultValue>cart/externalpaymentcallback</defaultValue>
                 <title>Redirect relative path</title>
-                <description>Relative URL (redirect path) from Paypal site to Storefront</description>
+                <description>Relative URL (redirect path) from Paypal site to Storefront (cart/externalpaymentcallback by default)</description>
             </setting>
             <setting>
                 <name>Paypal.ExpressCheckout.PaymentActionType</name>

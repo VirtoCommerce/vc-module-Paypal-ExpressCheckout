@@ -12,7 +12,7 @@ Installing the module:
 * **API username** - Merchant api username credential
 * **API password** - Merchant api password credential
 * **API signature** - Merchant api signature credential
-* **Redirect relative path** - Relative URL (redirect path) from Paypal site to Storefront
+* **Redirect relative path** - Relative URL (redirect path) from Paypal site to Storefront (cart/externalpaymentcallback by default)
 * **Payment action type** - Action type of payment
 
 # License

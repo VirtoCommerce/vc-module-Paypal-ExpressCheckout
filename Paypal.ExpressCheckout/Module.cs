@@ -27,7 +27,7 @@ namespace Paypal.ExpressCheckout
             {
                 Name = "Paypal Express Checkout",
                 Description = "PayPal express checkout integration",
-                LogoUrl = "http://www.credit-card-logos.com/images/multiple_credit-card-logos-2/credit_card_paypal_logos_2.gif",
+                LogoUrl = "https://raw.githubusercontent.com/VirtoCommerce/vc-module-Paypal-ExpressCheckout/master/Paypal.ExpressCheckout/Content/paypal_2014_logo.png",
                 Settings = settings
             };
 
