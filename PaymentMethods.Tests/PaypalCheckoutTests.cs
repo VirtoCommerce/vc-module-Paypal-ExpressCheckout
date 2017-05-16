@@ -114,11 +114,13 @@ namespace PaymentMethods.Tests
             settings.Add(new SettingEntry
             {
                 Name = "Paypal.ExpressCheckout.APIPassword",
+                ValueType = SettingValueType.SecureString,
                 Value = "XMDRC63XDNDQPXAZ"
             });
             settings.Add(new SettingEntry
             {
                 Name = "Paypal.ExpressCheckout.APISignature",
+                ValueType = SettingValueType.SecureString,
                 Value = "AiPC9BjkCyDFQXbSkoZcgqH3hpacAddFA7jQMnRzruCFYMSKx38TE0pt"
             });
             settings.Add(new SettingEntry

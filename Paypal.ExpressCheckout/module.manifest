@@ -57,13 +57,13 @@
             </setting>
             <setting>
                 <name>Paypal.ExpressCheckout.APIPassword</name>
-                <valueType>string</valueType>
+                <valueType>securestring</valueType>
                 <title>API password</title>
                 <description>Merchant api password credential</description>
             </setting>
             <setting>
                 <name>Paypal.ExpressCheckout.APISignature</name>
-                <valueType>string</valueType>
+                <valueType>securestring</valueType>
                 <title>API signature</title>
                 <description>Merchant api signature credential</description>
             </setting>
