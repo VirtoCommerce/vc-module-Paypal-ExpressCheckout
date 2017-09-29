@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Paypal.ExpressCheckout.Managers;
+﻿using Paypal.ExpressCheckout.Managers;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -17,13 +16,13 @@ using VirtoCommerce.Platform.Core.Settings;
 using VirtoCommerce.Platform.Data.DynamicProperties;
 using VirtoCommerce.Platform.Data.Infrastructure.Interceptors;
 using VirtoCommerce.Platform.Data.Repositories;
+using Xunit;
 
 namespace PaymentMethods.Tests
 {
-    [TestClass]
     public class PaypalCheckoutTests
     {
-        [TestMethod]
+        [Fact]
         public void CapturePayment()
         {
             var service = GetCustomerOrderService();
@@ -43,12 +42,12 @@ namespace PaymentMethods.Tests
             service = GetCustomerOrderService();
             order = service.GetByIds(new[] { "ec2b8124-f061-4997-baa1-ca55c1149a58" }, CustomerOrderResponseGroup.Full.ToString()).FirstOrDefault();
 
-            Assert.AreEqual(PaymentStatus.Paid, order.InPayments.First().PaymentStatus);
-            Assert.IsTrue(order.InPayments.First().IsApproved);
-            Assert.IsNotNull(order.InPayments.First().CapturedDate);
+            Assert.Equal(PaymentStatus.Paid, order.InPayments.First().PaymentStatus);
+            Assert.True(order.InPayments.First().IsApproved);
+            Assert.NotNull(order.InPayments.First().CapturedDate);
         }
 
-        [TestMethod]
+        [Fact]
         public void VoidPayment()
         {
             var service = GetCustomerOrderService();
@@ -68,12 +67,12 @@ namespace PaymentMethods.Tests
             service = GetCustomerOrderService();
             order = service.GetByIds(new[] { "ec2b8124-f061-4997-baa1-ca55c1149a58" }, CustomerOrderResponseGroup.Full.ToString()).FirstOrDefault();
 
-            Assert.AreEqual(PaymentStatus.Voided, order.InPayments.First().PaymentStatus);
-            Assert.IsTrue(!order.InPayments.First().IsApproved);
-            Assert.IsNotNull(order.InPayments.First().VoidedDate);
+            Assert.Equal(PaymentStatus.Voided, order.InPayments.First().PaymentStatus);
+            Assert.True(!order.InPayments.First().IsApproved);
+            Assert.NotNull(order.InPayments.First().VoidedDate);
         }
 
-        [TestMethod]
+        [Fact]
         public void RefundPayment()
         {
         }
